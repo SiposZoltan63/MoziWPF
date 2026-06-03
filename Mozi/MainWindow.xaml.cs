@@ -70,21 +70,25 @@ namespace Mozi
             MessageBox.Show(cmd.ExecuteScalar().ToString());
 
             conn.Close();
-            /*var row = Filmek.SelectedItem as DataRowView;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var row = Filmek.SelectedItem as DataRowView;
 
             var conn = new MySqlConnection(connectionString);
 
             conn.Open();
 
-            string sql = "SELECT COUNT(*) FROM `filmek` WHERE `ar`= @ar";
+            string sql = "SELECT COUNT(*) FROM `jegyek` WHERE `darab`= @darab";
 
             var cmd = new MySqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@ar", row["ar"]);
+            cmd.Parameters.AddWithValue("@darab", row["darab"]);
 
             MessageBox.Show(cmd.ExecuteScalar().ToString());
 
-            conn.Close();*/
+            conn.Close();
         }
     }
 }
