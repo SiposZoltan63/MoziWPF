@@ -59,7 +59,18 @@ namespace Mozi
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var row = Filmek.SelectedItem as DataRowView;
+            var conn = new MySqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT `cim` FROM `filmek` ORDER BY `ar` DESC LIMIT 1";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            MessageBox.Show(cmd.ExecuteScalar().ToString());
+
+            conn.Close();
+            /*var row = Filmek.SelectedItem as DataRowView;
 
             var conn = new MySqlConnection(connectionString);
 
@@ -73,7 +84,7 @@ namespace Mozi
 
             MessageBox.Show(cmd.ExecuteScalar().ToString());
 
-            conn.Close();
+            conn.Close();*/
         }
     }
 }
