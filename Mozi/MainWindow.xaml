@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="10,10,213,10"/>
-
+        <DataGrid x:Name="Filmek" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="86,22,175,46"/>
+        <Button Content="Jegyek száma" HorizontalAlignment="Left" Margin="641,40,0,0" VerticalAlignment="Top" Height="36" Width="119"/>
+        <Button Content="Legdrágább" HorizontalAlignment="Left" Margin="641,132,0,0" VerticalAlignment="Top" Height="36" Width="119" Click="Button_Click_1"/>
+        <Button Content="Kilépés" HorizontalAlignment="Left" Margin="641,217,0,0" VerticalAlignment="Top" Height="36" Width="119" Click="Button_Click"/>
     </Grid>
 </Window>
